@@ -118,16 +118,10 @@ fi
 
 export PATH="$HOME:/home/emily/.cargo/bin:/bin:/bin/vim:/usr/local/go/bin:$PATH"
 
-alias start-website-arthor='docker exec -it postera-backend ssh -4 -i key.pem ubuntu@172.26.20.61 -L localhost:58081:localhost:8080'
-alias start-website-rxn-sim='docker exec -it postera-backend ssh -4 -i key-two.pem ubuntu@10.82.116.72 -L localhost:58080:0.0.0.0:8000'
 alias aws=/usr/local/bin/aws
 
 # For aws auth
-export GOOGLE_USERNAME=emily.ripka@postera.ai
-export GOOGLE_IDP_ID=C00i8mef3
-export GOOGLE_SP_ID=59915059125
 alias aga='aws-google-auth -k --region us-west-2 --duration 14400 --profile sts'
-alias agad='aws-google-auth -k --region us-west-2 --duration 14400 --profile postera-development'
 alias gaa='git add *'
 alias gcm="git commit -m"
 alias gs="git stash"
