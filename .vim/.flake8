@@ -1,0 +1,11 @@
+[flake8]
+max-line-length = 80
+extend-ignore =
+  E203,  # Whitespace before ':'
+  E501,  # line too long
+  W503,  # Line break occurred after a binary operator
+  W504,  # Line break occurred after a binary operator
+  E131,  # Continuation line unaligned for hanging indent
+
+per-file-ignores =
+    */settings/*.py:F405  # Name may be undefined, or defined from star imports: module
