@@ -40,19 +40,23 @@ let g:gitgutter_set_sign_backgrounds=0
 
 Plug 'dense-analysis/ale'
 let g:ale_linters = {
-\   'python':        ['flake8', 'pylint', 'mypy'],
-\   'markdown':      ['mdl', 'writegood'],
-\   'javascript':    ['eslint'],
+\   'python':     ['black', 'mypy'],
+\   'markdown':   ['mdl', 'writegood'],
+\   'javascript': ['eslint'],
+\   'rust':       ['analyzer', 'cargo'],
 \}
-
 let g:ale_fixers = {
 \   '*':          ['remove_trailing_lines', 'trim_whitespace'],
-\   'python':     ['autopep8', 'isort'],
+\   'python':     ['black'],
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'rust':       ['rustfmt'],
 \}
-let g:ale_python_pylint_options = '--rcfile '.expand('~/.vim/.python-lint')
-let g:ale_python_flake8_options = '--rcfile  '.expand('~/.vim/.flake8')
+" let g:ale_python_pylint_options = '--rcfile '.expand('~/.vim/.python-lint')
+" let g:ale_python_flake8_options = '--rcfile  '.expand('~/.vim/.flake8')
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '🔰'
+let g:ale_fix_on_save = 1
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
@@ -64,7 +68,7 @@ let g:markdown_syntax_conceal = 0
 Plug 'MaxMEllon/vim-jsx-pretty'
 let g:vim_jsx_pretty_highlight_close_tag = 1
 
-Plug 'tpope/vim-commentary' 
+Plug 'tpope/vim-commentary'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
@@ -82,12 +86,7 @@ call plug#end()
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ycm-core/YouCompleteMe'
-
-call vundle#end()
 filetype plugin indent on
 
 let g:ycm_auto_trigger = 1
@@ -112,7 +111,7 @@ set number
 set hlsearch
 set autoindent
 set mouse-=a
-set colorcolumn=80 
+set colorcolumn=88
 set foldmethod=indent
 
 let g:solarized_termcolors= 256
