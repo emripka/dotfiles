@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 " vim-REPL + config
 Plug 'sillybun/vim-repl'
 let g:repl_program = {
