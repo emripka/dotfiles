@@ -3,6 +3,26 @@ call plug#begin('~/.vim/plugged')
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
+" remove this for to keep noise down.
+" let g:lsp_diagnostics_enabled = 0
+
+
+let g:lsp_settings_filetype_python = ['pylsp-all']
+let g:lsp_settings = extend(get(g:, 'lsp_settings', {}), {
+\   'pylsp-all': {
+\     'workspace_config': {
+\       'pylsp': {
+\         'plugins': {
+\           'pycodestyle': {
+\             'maxLineLength': 88
+\           }
+\         }
+\       }
+\     }
+\   }
+\})
+
+
 " vim-REPL + config
 Plug 'sillybun/vim-repl'
 let g:repl_program = {
